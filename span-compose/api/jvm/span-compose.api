@@ -1,0 +1,5 @@
+public final class com/mooncloak/kodetools/span/compose/SpanComposeUtilsKt {
+	public static final fun toAnnotatedString (Lcom/mooncloak/kodetools/span/SpannedText;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/text/AnnotatedString;
+	public static synthetic fun toAnnotatedString$default (Lcom/mooncloak/kodetools/span/SpannedText;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Landroidx/compose/ui/text/AnnotatedString;
+}
+

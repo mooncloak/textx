@@ -1,14 +1,13 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec
 import com.mooncloak.kodetools.span.buildSrc.LibraryConstants
-import com.mooncloak.kodetools.span.buildSrc.isBuildingOnLinux
 import com.mooncloak.kodetools.span.buildSrc.isBuildingOnOSX
-import com.mooncloak.kodetools.span.buildSrc.isBuildingOnWindows
 import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("org.jetbrains.compose")
     id("maven-publish")
     id("org.jetbrains.dokka")
     id("com.mikepenz.aboutlibraries.plugin")
@@ -30,7 +29,6 @@ kotlin {
                 enabled = false
             }
         }
-        nodejs()
     }
 
     @OptIn(ExperimentalWasmDsl::class)
@@ -46,9 +44,6 @@ kotlin {
             }
         }
     }
-
-    @OptIn(ExperimentalWasmDsl::class)
-    wasmWasi()
 
     androidTarget {
         publishAllLibraryVariants()
@@ -66,17 +61,13 @@ kotlin {
         macosArm64()
     }
 
-    if (isBuildingOnLinux()) {
-        linuxX64()
-    }
-
-    if (isBuildingOnWindows()) {
-        mingwX64()
-    }
-
     sourceSets {
         val commonMain by getting {
             dependencies {
+                api(project(":span-core"))
+
+                implementation(compose.runtime)
+                implementation(compose.ui)
             }
         }
 
@@ -89,7 +80,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.mooncloak.kodetools.span.core"
+    namespace = "com.mooncloak.kodetools.span.compose"
     compileSdk = LibraryConstants.Android.compileSdkVersion
 
     defaultConfig {

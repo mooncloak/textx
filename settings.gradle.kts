@@ -28,3 +28,4 @@ plugins {
 rootProject.name = "span"
 
 include(":span-core")
+include(":span-compose")

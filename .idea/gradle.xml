@@ -20,6 +20,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/span-compose" />
             <option value="$PROJECT_DIR$/span-core" />
           </set>
         </option>
