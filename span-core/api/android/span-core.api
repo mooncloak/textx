@@ -1,0 +1,16 @@
+public abstract interface class com/mooncloak/kodetools/span/Span {
+	public abstract fun getType ()Ljava/lang/String;
+}
+
+public abstract interface class com/mooncloak/kodetools/span/SpannedRanges {
+	public abstract fun getRanges ()Ljava/util/Set;
+	public abstract fun getSpan ()Lcom/mooncloak/kodetools/span/Span;
+}
+
+public abstract interface class com/mooncloak/kodetools/span/SpannedText {
+	public abstract fun getFormat ()Ljava/lang/String;
+	public abstract fun getSpans ()Ljava/util/List;
+	public abstract fun getText ()Ljava/lang/String;
+	public abstract fun getVersion ()Ljava/lang/String;
+}
+

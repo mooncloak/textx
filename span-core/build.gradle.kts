@@ -3,6 +3,7 @@ import com.mooncloak.kodetools.span.buildSrc.LibraryConstants
 import com.mooncloak.kodetools.span.buildSrc.isBuildingOnLinux
 import com.mooncloak.kodetools.span.buildSrc.isBuildingOnOSX
 import com.mooncloak.kodetools.span.buildSrc.isBuildingOnWindows
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -11,7 +12,6 @@ plugins {
     id("maven-publish")
     id("org.jetbrains.dokka")
     id("com.mikepenz.aboutlibraries.plugin")
-    kotlin("plugin.serialization")
     id("com.codingfeline.buildkonfig")
 }
 
@@ -20,21 +20,48 @@ version = LibraryConstants.versionName
 
 kotlin {
     // Enable the default target hierarchy:
-    targetHierarchy.default()
+    applyDefaultHierarchyTemplate()
 
     jvm()
 
     js(IR) {
+        browser {
+            testTask {
+                enabled = false
+            }
+        }
         nodejs()
     }
 
-    androidTarget()
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs {
+        browser {
+            testTask {
+                enabled = false
+            }
+        }
+        nodejs {
+            testTask {
+                enabled = false
+            }
+        }
+    }
+
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmWasi()
+
+    androidTarget {
+        publishAllLibraryVariants()
+    }
 
     if (isBuildingOnOSX()) {
-        ios()
+        iosX64()
+        iosArm64()
         iosSimulatorArm64()
-        tvos()
-        watchos()
+        tvosX64()
+        tvosArm64()
+        watchosX64()
+        watchosArm64()
         macosX64()
         macosArm64()
     }
@@ -50,7 +77,6 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(KotlinX.serialization.json)
             }
         }
 
@@ -59,12 +85,11 @@ kotlin {
                 implementation(kotlin("test"))
             }
         }
-
-        val nativeMain by sourceSets.getting
     }
 }
 
 android {
+    namespace = "com.mooncloak.kodetools.span"
     compileSdk = LibraryConstants.Android.compileSdkVersion
 
     defaultConfig {
