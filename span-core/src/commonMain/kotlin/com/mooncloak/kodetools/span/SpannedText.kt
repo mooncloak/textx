@@ -1,22 +1,27 @@
 package com.mooncloak.kodetools.span
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+interface SpannedText<S : Span> {
 
-@Serializable
-class SpannedText(
-    @SerialName(value = "value") val value: String,
-    @SerialName(value = "spans") val spans: List<SpannedRanges> = emptyList()
-) {
+    /**
+     * Uniquely identifies the [SpannedText] format and the [Span]s that are available in this format. It is
+     * recommended to use Java package naming for this value (reverse domain name).
+     */
+    val format: String
 
-    @SerialName(value = "format")
-    val format: String = FORMAT_MOONCLOAK_KODETOOLS_SPAN
+    /**
+     * The version of the [format] that this [SpannedText] applies.
+     */
+    val version: String
 
-    @SerialName(value = "version")
-    val version: String = BuildKonfig.version
+    /**
+     * The actual [String] text value that spans are applied over. The [spans] are applied at index ranges over this
+     * text value.
+     */
+    val text: String
 
-    companion object {
-
-        const val FORMAT_MOONCLOAK_KODETOOLS_SPAN = "com.mooncloak.kodetools.span"
-    }
+    /**
+     * The [SpannedRanges] which contain [Span]s and their associated index ranges of where they should be applied on
+     * the [text] value.
+     */
+    val spans: List<SpannedRanges<S>>
 }
