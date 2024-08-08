@@ -6,7 +6,7 @@ authors:
 contact:
     - alias: "kodetools@mooncloak.com"
       website: "https://kodetools.mooncloak.codes"
-title: "span"
+title: "textx"
 type: "software"
 abstract: "Kotlin multi-platform spannable text library."
 license: "Apache-2.0"
@@ -19,5 +19,7 @@ keywords:
     - "markup"
     - "markdown"
     - "kotlin multiplatform"
-repository-code: "https://github.com/mooncloak/span"
-url: "https://github.com/mooncloak/span"
+    - "textx"
+    - "text"
+repository-code: "https://github.com/mooncloak/textx"
+url: "https://github.com/mooncloak/textx"
