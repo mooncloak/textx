@@ -1,7 +1,10 @@
 $dokka.format:gfm-v1
 $dokka.linkExtension:md
 $dokka.location:com.mooncloak.kodetools.textx////PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/index.md
+$dokka.location:com.mooncloak.kodetools.textx//Text/#com.mooncloak.kodetools.textx.TextContent#androidx.compose.ui.Modifier#androidx.compose.ui.graphics.Color#androidx.compose.ui.unit.TextUnit#androidx.compose.ui.text.font.FontStyle?#androidx.compose.ui.text.font.FontWeight?#androidx.compose.ui.text.font.FontFamily?#androidx.compose.ui.unit.TextUnit#androidx.compose.ui.text.style.TextDecoration?#androidx.compose.ui.text.style.TextAlign?#androidx.compose.ui.unit.TextUnit#androidx.compose.ui.text.style.TextOverflow#kotlin.Boolean#kotlin.Int#kotlin.Int#kotlin.Function1[androidx.compose.ui.text.TextLayoutResult,kotlin.Unit]#androidx.compose.ui.text.TextStyle/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-text.md
+$dokka.location:com.mooncloak.kodetools.textx//default/com.mooncloak.kodetools.textx.HtmlTagStyleMap.Companion#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/default.md
 $dokka.location:com.mooncloak.kodetools.textx//toAnnotatedString/com.mooncloak.kodetools.textx.AnnotatedText#/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/to-annotated-string.md
+$dokka.location:com.mooncloak.kodetools.textx//toAnnotatedString/com.mooncloak.kodetools.textx.HtmlText#com.mooncloak.kodetools.textx.HtmlTagStyleMap/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/to-annotated-string.md
 $dokka.location:com.mooncloak.kodetools.textx//toAnnotatedText/androidx.compose.ui.text.AnnotatedString#/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/to-annotated-text.md
 $dokka.location:com.mooncloak.kodetools.textx//toIntRange/com.mooncloak.kodetools.textx.TextRange#/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/to-int-range.md
 $dokka.location:com.mooncloak.kodetools.textx//toTextRange/kotlin.ranges.IntRange#/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/to-text-range.md
@@ -12,6 +15,10 @@ $dokka.location:com.mooncloak.kodetools.textx/AnnotatedText/paragraphs/#/Pointin
 $dokka.location:com.mooncloak.kodetools.textx/AnnotatedText/spans/#/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-annotated-text/spans.md
 $dokka.location:com.mooncloak.kodetools.textx/AnnotatedText/type/#/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-annotated-text/type.md
 $dokka.location:com.mooncloak.kodetools.textx/AnnotatedText/value/#/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-annotated-text/value.md
+$dokka.location:com.mooncloak.kodetools.textx/HtmlTagStyleMap.Companion///PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-html-tag-style-map/-companion/index.md
+$dokka.location:com.mooncloak.kodetools.textx/HtmlTagStyleMap///PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-html-tag-style-map/index.md
+$dokka.location:com.mooncloak.kodetools.textx/HtmlTagStyleMap/HtmlTagStyleMap/#kotlin.collections.Map[kotlin.String,androidx.compose.ui.text.SpanStyle?]/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-html-tag-style-map/-html-tag-style-map.md
+$dokka.location:com.mooncloak.kodetools.textx/HtmlTagStyleMap/value/#/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-html-tag-style-map/value.md
 $dokka.location:com.mooncloak.kodetools.textx/HtmlText///PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-html-text/index.md
 $dokka.location:com.mooncloak.kodetools.textx/HtmlText/HtmlText/#kotlin.String/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-html-text/-html-text.md
 $dokka.location:com.mooncloak.kodetools.textx/HtmlText/type/#/PointingToDeclaration/textx-core/textx-core/com.mooncloak.kodetools.textx/-html-text/type.md
