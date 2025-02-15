@@ -129,11 +129,13 @@ public final class com/mooncloak/kodetools/textx/PlainText$Companion {
 
 public abstract interface class com/mooncloak/kodetools/textx/TextContent {
 	public static final field Companion Lcom/mooncloak/kodetools/textx/TextContent$Companion;
+	public static final field HEADER Ljava/lang/String;
 	public abstract fun getType-4dSnLo0 ()Ljava/lang/String;
 	public abstract fun getValue ()Ljava/lang/String;
 }
 
 public final class com/mooncloak/kodetools/textx/TextContent$Companion {
+	public static final field HEADER Ljava/lang/String;
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
@@ -185,5 +187,13 @@ public final class com/mooncloak/kodetools/textx/TextContent$Type$Companion {
 	public final fun getMarkdown-4dSnLo0 ()Ljava/lang/String;
 	public final fun getPlain-4dSnLo0 ()Ljava/lang/String;
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public abstract interface class com/mooncloak/kodetools/textx/TextContentConverter {
+	public static final field Companion Lcom/mooncloak/kodetools/textx/TextContentConverter$Companion;
+	public abstract fun convert (Lcom/mooncloak/kodetools/textx/TextContent;)Lcom/mooncloak/kodetools/textx/TextContent;
+}
+
+public final class com/mooncloak/kodetools/textx/TextContentConverter$Companion {
 }
 
