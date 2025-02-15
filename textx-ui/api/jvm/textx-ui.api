@@ -34,8 +34,8 @@ public final class com/mooncloak/kodetools/textx/HtmlTagStyleMapKt {
 }
 
 public final class com/mooncloak/kodetools/textx/HtmlTextUtilsKt {
-	public static final fun toAnnotatedString-ovxpCAs (Lcom/mooncloak/kodetools/textx/HtmlText;Ljava/util/Map;)Landroidx/compose/ui/text/AnnotatedString;
-	public static synthetic fun toAnnotatedString-ovxpCAs$default (Lcom/mooncloak/kodetools/textx/HtmlText;Ljava/util/Map;ILjava/lang/Object;)Landroidx/compose/ui/text/AnnotatedString;
+	public static final fun toAnnotatedString-pY46og0 (Ljava/lang/String;Ljava/util/Map;)Landroidx/compose/ui/text/AnnotatedString;
+	public static synthetic fun toAnnotatedString-pY46og0$default (Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)Landroidx/compose/ui/text/AnnotatedString;
 }
 
 public final class com/mooncloak/kodetools/textx/TextExtensionsKt {

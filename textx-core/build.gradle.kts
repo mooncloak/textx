@@ -27,7 +27,7 @@ kotlin {
 
                 // Serialization
                 // https://github.com/Kotlin/kotlinx.serialization
-                implementation(KotlinX.serialization.core)
+                implementation(KotlinX.serialization.json)
 
                 // Declarative UI - Compose Multiplatform
                 implementation(compose.runtime)

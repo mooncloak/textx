@@ -1,56 +1,47 @@
 public final class com/mooncloak/kodetools/textx/AnnotatedText : com/mooncloak/kodetools/textx/TextContent {
-	public static final field $stable I
 	public static final field Companion Lcom/mooncloak/kodetools/textx/AnnotatedText$Companion;
-	public fun <init> (Landroidx/compose/ui/text/AnnotatedString;)V
-	public final fun component1 ()Landroidx/compose/ui/text/AnnotatedString;
-	public final fun copy (Landroidx/compose/ui/text/AnnotatedString;)Lcom/mooncloak/kodetools/textx/AnnotatedText;
-	public static synthetic fun copy$default (Lcom/mooncloak/kodetools/textx/AnnotatedText;Landroidx/compose/ui/text/AnnotatedString;ILjava/lang/Object;)Lcom/mooncloak/kodetools/textx/AnnotatedText;
+	public static final synthetic fun box-impl (Landroidx/compose/ui/text/AnnotatedString;)Lcom/mooncloak/kodetools/textx/AnnotatedText;
+	public static fun constructor-impl (Landroidx/compose/ui/text/AnnotatedString;)Landroidx/compose/ui/text/AnnotatedString;
 	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Landroidx/compose/ui/text/AnnotatedString;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/AnnotatedString;)Z
 	public final fun getAnnotated ()Landroidx/compose/ui/text/AnnotatedString;
 	public fun getType-4dSnLo0 ()Ljava/lang/String;
+	public static fun getType-4dSnLo0 (Landroidx/compose/ui/text/AnnotatedString;)Ljava/lang/String;
 	public fun getValue ()Ljava/lang/String;
+	public static fun getValue-impl (Landroidx/compose/ui/text/AnnotatedString;)Ljava/lang/String;
 	public fun hashCode ()I
+	public static fun hashCode-impl (Landroidx/compose/ui/text/AnnotatedString;)I
 	public fun toString ()Ljava/lang/String;
-}
-
-public synthetic class com/mooncloak/kodetools/textx/AnnotatedText$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field $stable I
-	public static final field INSTANCE Lcom/mooncloak/kodetools/textx/AnnotatedText$$serializer;
-	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/mooncloak/kodetools/textx/AnnotatedText;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/mooncloak/kodetools/textx/AnnotatedText;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public static fun toString-impl (Landroidx/compose/ui/text/AnnotatedString;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Landroidx/compose/ui/text/AnnotatedString;
 }
 
 public final class com/mooncloak/kodetools/textx/AnnotatedText$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
-public final class com/mooncloak/kodetools/textx/HtmlText : com/mooncloak/kodetools/textx/TextContent {
+public final class com/mooncloak/kodetools/textx/AnnotatedText$Key {
 	public static final field $stable I
-	public static final field Companion Lcom/mooncloak/kodetools/textx/HtmlText$Companion;
-	public fun <init> (Ljava/lang/String;)V
-	public final fun component1 ()Ljava/lang/String;
-	public final fun copy (Ljava/lang/String;)Lcom/mooncloak/kodetools/textx/HtmlText;
-	public static synthetic fun copy$default (Lcom/mooncloak/kodetools/textx/HtmlText;Ljava/lang/String;ILjava/lang/Object;)Lcom/mooncloak/kodetools/textx/HtmlText;
-	public fun equals (Ljava/lang/Object;)Z
-	public fun getType-4dSnLo0 ()Ljava/lang/String;
-	public fun getValue ()Ljava/lang/String;
-	public fun hashCode ()I
-	public fun toString ()Ljava/lang/String;
+	public static final field ANNOTATED Ljava/lang/String;
+	public static final field INSTANCE Lcom/mooncloak/kodetools/textx/AnnotatedText$Key;
 }
 
-public synthetic class com/mooncloak/kodetools/textx/HtmlText$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field $stable I
-	public static final field INSTANCE Lcom/mooncloak/kodetools/textx/HtmlText$$serializer;
-	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/mooncloak/kodetools/textx/HtmlText;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/mooncloak/kodetools/textx/HtmlText;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+public final class com/mooncloak/kodetools/textx/HtmlText : com/mooncloak/kodetools/textx/TextContent {
+	public static final field Companion Lcom/mooncloak/kodetools/textx/HtmlText$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Lcom/mooncloak/kodetools/textx/HtmlText;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public fun getType-4dSnLo0 ()Ljava/lang/String;
+	public static fun getType-4dSnLo0 (Ljava/lang/String;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
 }
 
 public final class com/mooncloak/kodetools/textx/HtmlText$Companion {
@@ -91,6 +82,7 @@ public final class com/mooncloak/kodetools/textx/MarkdownFlavor$Companion {
 public final class com/mooncloak/kodetools/textx/MarkdownText : com/mooncloak/kodetools/textx/TextContent {
 	public static final field $stable I
 	public static final field Companion Lcom/mooncloak/kodetools/textx/MarkdownText$Companion;
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2-JUt9nyA ()Ljava/lang/String;
@@ -104,44 +96,31 @@ public final class com/mooncloak/kodetools/textx/MarkdownText : com/mooncloak/ko
 	public fun toString ()Ljava/lang/String;
 }
 
-public synthetic class com/mooncloak/kodetools/textx/MarkdownText$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field $stable I
-	public static final field INSTANCE Lcom/mooncloak/kodetools/textx/MarkdownText$$serializer;
-	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/mooncloak/kodetools/textx/MarkdownText;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/mooncloak/kodetools/textx/MarkdownText;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-}
-
 public final class com/mooncloak/kodetools/textx/MarkdownText$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
-public final class com/mooncloak/kodetools/textx/PlainText : com/mooncloak/kodetools/textx/TextContent {
+public final class com/mooncloak/kodetools/textx/MarkdownText$Key {
 	public static final field $stable I
-	public static final field Companion Lcom/mooncloak/kodetools/textx/PlainText$Companion;
-	public fun <init> (Ljava/lang/String;)V
-	public final fun component1 ()Ljava/lang/String;
-	public final fun copy (Ljava/lang/String;)Lcom/mooncloak/kodetools/textx/PlainText;
-	public static synthetic fun copy$default (Lcom/mooncloak/kodetools/textx/PlainText;Ljava/lang/String;ILjava/lang/Object;)Lcom/mooncloak/kodetools/textx/PlainText;
-	public fun equals (Ljava/lang/Object;)Z
-	public fun getType-4dSnLo0 ()Ljava/lang/String;
-	public fun getValue ()Ljava/lang/String;
-	public fun hashCode ()I
-	public fun toString ()Ljava/lang/String;
+	public static final field FLAVOR Ljava/lang/String;
+	public static final field INSTANCE Lcom/mooncloak/kodetools/textx/MarkdownText$Key;
 }
 
-public synthetic class com/mooncloak/kodetools/textx/PlainText$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field $stable I
-	public static final field INSTANCE Lcom/mooncloak/kodetools/textx/PlainText$$serializer;
-	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/mooncloak/kodetools/textx/PlainText;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/mooncloak/kodetools/textx/PlainText;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+public final class com/mooncloak/kodetools/textx/PlainText : com/mooncloak/kodetools/textx/TextContent {
+	public static final field Companion Lcom/mooncloak/kodetools/textx/PlainText$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Lcom/mooncloak/kodetools/textx/PlainText;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public fun getType-4dSnLo0 ()Ljava/lang/String;
+	public static fun getType-4dSnLo0 (Ljava/lang/String;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
 }
 
 public final class com/mooncloak/kodetools/textx/PlainText$Companion {
@@ -156,6 +135,22 @@ public abstract interface class com/mooncloak/kodetools/textx/TextContent {
 
 public final class com/mooncloak/kodetools/textx/TextContent$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/mooncloak/kodetools/textx/TextContent$Discriminator {
+	public static final field $stable I
+	public static final field ANNOTATED Ljava/lang/String;
+	public static final field HTML Ljava/lang/String;
+	public static final field INSTANCE Lcom/mooncloak/kodetools/textx/TextContent$Discriminator;
+	public static final field MARKDOWN Ljava/lang/String;
+	public static final field PLAIN Ljava/lang/String;
+}
+
+public final class com/mooncloak/kodetools/textx/TextContent$Key {
+	public static final field $stable I
+	public static final field INSTANCE Lcom/mooncloak/kodetools/textx/TextContent$Key;
+	public static final field TYPE Ljava/lang/String;
+	public static final field VALUE Ljava/lang/String;
 }
 
 public final class com/mooncloak/kodetools/textx/TextContent$Type {

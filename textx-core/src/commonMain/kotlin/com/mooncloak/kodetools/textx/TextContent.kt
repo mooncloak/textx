@@ -6,8 +6,12 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
 import kotlin.jvm.JvmInline
 import com.mooncloak.kodetools.compose.serialization.AnnotatedStringSerializer
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.json.JsonClassDiscriminator
 
 @Serializable
+@OptIn(ExperimentalSerializationApi::class)
+@JsonClassDiscriminator(discriminator = TextContent.Key.TYPE)
 public sealed interface TextContent {
 
     public val type: Type
@@ -21,54 +25,85 @@ public sealed interface TextContent {
 
         public companion object {
 
-            public val Plain: Type = Type(value = "plain")
-            public val Html: Type = Type(value = "html")
-            public val Markdown: Type = Type(value = "markdown")
-            public val Annotated: Type = Type(value = "annotated")
+            public val Plain: Type = Type(value = Discriminator.PLAIN)
+            public val Html: Type = Type(value = Discriminator.HTML)
+            public val Markdown: Type = Type(value = Discriminator.MARKDOWN)
+            public val Annotated: Type = Type(value = Discriminator.ANNOTATED)
         }
+    }
+
+    public object Key {
+
+        public const val TYPE: String = "type"
+        public const val VALUE: String = "value"
+    }
+
+    public object Discriminator {
+
+        public const val PLAIN: String = "plain"
+        public const val HTML: String = "html"
+        public const val MARKDOWN: String = "markdown"
+        public const val ANNOTATED: String = "annotated"
     }
 }
 
-@Serializable
-@SerialName(value = "plain")
-public data class PlainText public constructor(
-    @SerialName(value = "value") public override val value: String
+@JvmInline
+@Serializable(with = PlainTextSerializer::class)
+@SerialName(value = TextContent.Discriminator.PLAIN)
+public value class PlainText public constructor(
+    @SerialName(value = TextContent.Key.VALUE) public override val value: String
 ) : TextContent {
 
     @Transient
-    public override val type: TextContent.Type = TextContent.Type.Plain
+    public override val type: TextContent.Type
+        get() = TextContent.Type.Plain
 }
 
-@Serializable
-@SerialName(value = "html")
-public data class HtmlText public constructor(
-    @SerialName(value = "value") public override val value: String
+@JvmInline
+@Serializable(with = HtmlTextSerializer::class)
+@SerialName(value = TextContent.Discriminator.HTML)
+public value class HtmlText public constructor(
+    @SerialName(value = TextContent.Key.VALUE) public override val value: String
 ) : TextContent {
 
     @Transient
-    public override val type: TextContent.Type = TextContent.Type.Html
+    public override val type: TextContent.Type
+        get() = TextContent.Type.Html
 }
 
-@Serializable
-@SerialName(value = "markdown")
+@Serializable(with = MarkdownTextSerializer::class)
+@SerialName(value = TextContent.Discriminator.MARKDOWN)
 public data class MarkdownText public constructor(
-    @SerialName(value = "value") public override val value: String,
-    @SerialName(value = "flavor") public val flavor: MarkdownFlavor
+    @SerialName(value = TextContent.Key.VALUE) public override val value: String,
+    @SerialName(value = Key.FLAVOR) public val flavor: MarkdownFlavor = MarkdownFlavor.CommonMark
 ) : TextContent {
 
     @Transient
     public override val type: TextContent.Type = TextContent.Type.Markdown
+
+    public object Key {
+
+        public const val FLAVOR: String = "flavor"
+    }
 }
 
-@Serializable
-@SerialName(value = "annotated")
-public data class AnnotatedText public constructor(
-    @SerialName(value = "annotated") @Serializable(with = AnnotatedStringSerializer::class) public val annotated: AnnotatedString
+@JvmInline
+@Serializable(with = AnnotatedTextSerializer::class)
+@SerialName(value = TextContent.Discriminator.ANNOTATED)
+public value class AnnotatedText public constructor(
+    @SerialName(value = Key.ANNOTATED) @Serializable(with = AnnotatedStringSerializer::class) public val annotated: AnnotatedString
 ) : TextContent {
 
     @Transient
-    public override val value: String = annotated.text
+    public override val value: String
+        get() = annotated.text
 
     @Transient
-    public override val type: TextContent.Type = TextContent.Type.Annotated
+    public override val type: TextContent.Type
+        get() = TextContent.Type.Annotated
+
+    public object Key {
+
+        public const val ANNOTATED: String = "annotated"
+    }
 }
