@@ -21,6 +21,8 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
+                api(project(":textx-core"))
+
                 // Coroutines
                 // https://github.com/Kotlin/kotlinx.coroutines
                 implementation(KotlinX.coroutines.core)
@@ -32,10 +34,20 @@ kotlin {
                 // Declarative UI - Compose Multiplatform
                 implementation(compose.runtime)
                 implementation(compose.ui)
+                implementation(compose.material3)
 
                 // compose serialization
                 // https://github.com/mooncloak/compose-serialization
                 implementation("com.mooncloak.kodetools.compose.serialization:compose-serialization-core:_")
+
+                // Markdown Rendering
+                // https://github.com/mikepenz/multiplatform-markdown-renderer
+                implementation("com.mikepenz:multiplatform-markdown-renderer-m3:_")
+
+                // HTML
+                // https://github.com/MohamedRejeb/Ksoup
+                implementation("com.mohamedrejeb.ksoup:ksoup-html:_")
+                implementation("com.mohamedrejeb.ksoup:ksoup-entities:_")
             }
         }
 
@@ -49,7 +61,7 @@ kotlin {
 
 android {
     compileSdk = LibraryConstants.Android.compileSdkVersion
-    namespace = "com.mooncloak.kodetools.textx.core"
+    namespace = "com.mooncloak.kodetools.textx.ui"
 
     defaultConfig {
         minSdk = LibraryConstants.Android.minSdkVersion

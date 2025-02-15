@@ -1,13 +1,12 @@
 # textx
 
 kotlinx.serialization models for representing rich text content. This makes it easier for different platforms, in
-particular mobile platforms, to render rich text using their native UI framework without complex format-specific
+particular client platforms, to render rich text using their native UI framework without complex format-specific
 parsers. For instance, instead of the server providing an HTML text string through an API, requiring the client to use
 a WebView component to render it, the server can return these pre-parsed serialization models, which can easily be
 transformed into native UI components for each platform.
 
 <img alt="GitHub tag (latest by date)" src="https://img.shields.io/github/v/tag/mooncloak/textx">
-
 
 ## Status ⚠️
 

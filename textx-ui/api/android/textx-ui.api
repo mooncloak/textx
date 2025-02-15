@@ -1,0 +1,44 @@
+public final class com/mooncloak/kodetools/textx/HtmlTagStyleMap {
+	public static final field Companion Lcom/mooncloak/kodetools/textx/HtmlTagStyleMap$Companion;
+	public static final synthetic fun box-impl (Ljava/util/Map;)Lcom/mooncloak/kodetools/textx/HtmlTagStyleMap;
+	public static fun constructor-impl (Ljava/util/Map;)Ljava/util/Map;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/util/Map;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/util/Map;Ljava/util/Map;)Z
+	public final fun getValue ()Ljava/util/Map;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/util/Map;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/util/Map;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/util/Map;
+}
+
+public synthetic class com/mooncloak/kodetools/textx/HtmlTagStyleMap$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field $stable I
+	public static final field INSTANCE Lcom/mooncloak/kodetools/textx/HtmlTagStyleMap$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize-Hu0MD-c (Lkotlinx/serialization/encoding/Decoder;)Ljava/util/Map;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize-ovxpCAs (Lkotlinx/serialization/encoding/Encoder;Ljava/util/Map;)V
+}
+
+public final class com/mooncloak/kodetools/textx/HtmlTagStyleMap$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/mooncloak/kodetools/textx/HtmlTagStyleMapKt {
+	public static final fun default-40kPL-U (Lcom/mooncloak/kodetools/textx/HtmlTagStyleMap$Companion;JJJJJJ)Ljava/util/Map;
+	public static synthetic fun default-40kPL-U$default (Lcom/mooncloak/kodetools/textx/HtmlTagStyleMap$Companion;JJJJJJILjava/lang/Object;)Ljava/util/Map;
+}
+
+public final class com/mooncloak/kodetools/textx/HtmlTextUtilsKt {
+	public static final fun toAnnotatedString-ovxpCAs (Lcom/mooncloak/kodetools/textx/HtmlText;Ljava/util/Map;)Landroidx/compose/ui/text/AnnotatedString;
+	public static synthetic fun toAnnotatedString-ovxpCAs$default (Lcom/mooncloak/kodetools/textx/HtmlText;Ljava/util/Map;ILjava/lang/Object;)Landroidx/compose/ui/text/AnnotatedString;
+}
+
+public final class com/mooncloak/kodetools/textx/TextExtensionsKt {
+	public static final fun Text--4IGK_g (Lcom/mooncloak/kodetools/textx/TextContent;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZIILkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V
+}
+

@@ -65,7 +65,7 @@ afterEvaluate {
 fun MavenPublication.mavenCentralPom() {
     pom {
         name.set("textx")
-        description.set("Kotlinx serializations for rich text content.")
+        description.set("Kotlin multiplatform representations of rich text content.")
         url.set("https://github.com/mooncloak/textx")
 
         organization {

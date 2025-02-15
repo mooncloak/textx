@@ -6,7 +6,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -19,7 +18,6 @@ import androidx.compose.ui.unit.TextUnit
 import com.mikepenz.markdown.compose.elements.MarkdownText
 
 @Suppress("FunctionName")
-@OptIn(ExperimentalTextApi::class)
 @Composable
 public fun Text(
     text: TextContent,
@@ -98,7 +96,7 @@ public fun Text(
         }
 
         is AnnotatedText -> {
-            val annotatedString = text.toAnnotatedString()
+            val annotatedString = text.annotated
 
             androidx.compose.material3.Text(
                 text = annotatedString,

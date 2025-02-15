@@ -1,14 +1,11 @@
 package com.mooncloak.kodetools.textx
 
-import androidx.compose.ui.text.ExperimentalTextApi
-import androidx.compose.ui.text.ParagraphStyle
-import androidx.compose.ui.text.SpanStyle
-import com.mooncloak.kodetools.compose.serialization.ParagraphStyleSerializer
-import com.mooncloak.kodetools.compose.serialization.SpanStyleSerializer
+import androidx.compose.ui.text.AnnotatedString
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
 import kotlin.jvm.JvmInline
+import com.mooncloak.kodetools.compose.serialization.AnnotatedStringSerializer
 
 @Serializable
 public sealed interface TextContent {
@@ -65,13 +62,12 @@ public data class MarkdownText public constructor(
 
 @Serializable
 @SerialName(value = "annotated")
-@ExperimentalTextApi
 public data class AnnotatedText public constructor(
-    @SerialName(value = "value") public override val value: String,
-    @SerialName(value = "spans") public val spans: List<Spanned<@Serializable(with = SpanStyleSerializer::class) SpanStyle>> = emptyList(),
-    @SerialName(value = "paragraphs") public val paragraphs: List<Spanned<@Serializable(with = ParagraphStyleSerializer::class) ParagraphStyle>> = emptyList(),
-    @SerialName(value = "annotations") public val annotations: List<Spanned<TextAnnotation>> = emptyList()
+    @SerialName(value = "annotated") @Serializable(with = AnnotatedStringSerializer::class) public val annotated: AnnotatedString
 ) : TextContent {
+
+    @Transient
+    public override val value: String = annotated.text
 
     @Transient
     public override val type: TextContent.Type = TextContent.Type.Annotated
