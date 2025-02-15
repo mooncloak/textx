@@ -35,7 +35,7 @@ kotlin {
 
                 // compose serialization
                 // https://github.com/mooncloak/compose-serialization
-                implementation("com.mooncloak.kodetools.compose.serialization:compose-serialization-core:_")
+                api("com.mooncloak.kodetools.compose.serialization:compose-serialization-core:_")
             }
         }
 

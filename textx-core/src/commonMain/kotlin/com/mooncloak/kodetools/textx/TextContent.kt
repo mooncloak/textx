@@ -1,17 +1,11 @@
 package com.mooncloak.kodetools.textx
 
 import androidx.compose.ui.text.AnnotatedString
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.Transient
 import kotlin.jvm.JvmInline
 import com.mooncloak.kodetools.compose.serialization.AnnotatedStringSerializer
-import kotlinx.serialization.ExperimentalSerializationApi
-import kotlinx.serialization.json.JsonClassDiscriminator
+import kotlinx.serialization.*
 
-@Serializable
-@OptIn(ExperimentalSerializationApi::class)
-@JsonClassDiscriminator(discriminator = TextContent.Key.TYPE)
+@Serializable(with = TextContentSerializer::class)
 public sealed interface TextContent {
 
     public val type: Type

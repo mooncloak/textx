@@ -160,7 +160,11 @@ internal object AnnotatedTextSerializer : KSerializer<AnnotatedText> {
 
     override val descriptor: SerialDescriptor = buildClassSerialDescriptor(serialName = "AnnotatedText") {
         element<String>(TextContent.Key.TYPE)
-        element<AnnotatedString>(AnnotatedText.Key.ANNOTATED)
+        element(
+            elementName = AnnotatedText.Key.ANNOTATED,
+            descriptor = AnnotatedStringSerializer.descriptor,
+            isOptional = true
+        )
     }
 
     override fun serialize(encoder: Encoder, value: AnnotatedText) {
@@ -198,4 +202,86 @@ internal object AnnotatedTextSerializer : KSerializer<AnnotatedText> {
                 annotated = annotated
             )
         }
+}
+
+internal object TextContentSerializer : KSerializer<TextContent> {
+
+    override val descriptor: SerialDescriptor = buildClassSerialDescriptor(serialName = "TextContent") {
+        element<String>(elementName = TextContent.Key.TYPE)
+        element<String>(elementName = TextContent.Key.VALUE)
+        element<String?>(elementName = MarkdownText.Key.FLAVOR, isOptional = true)
+        element(
+            elementName = AnnotatedText.Key.ANNOTATED,
+            descriptor = AnnotatedStringSerializer.descriptor,
+            isOptional = true
+        )
+    }
+
+    @OptIn(ExperimentalSerializationApi::class)
+    override fun serialize(encoder: Encoder, value: TextContent) {
+        encoder.encodeStructure(descriptor) {
+            encodeStringElement(descriptor, 0, value.type.value)
+            encodeStringElement(descriptor, 1, value.value)
+            encodeNullableSerializableElement(
+                descriptor,
+                2,
+                String.serializer(),
+                (value as? MarkdownText)?.flavor?.value
+            )
+            encodeNullableSerializableElement(
+                descriptor,
+                3,
+                AnnotatedStringSerializer,
+                (value as? AnnotatedText)?.annotated
+            )
+        }
+    }
+
+    @OptIn(ExperimentalSerializationApi::class)
+    override fun deserialize(decoder: Decoder): TextContent {
+        var type: String? = null
+        var value: String? = null
+        var flavor: String? = null
+        var annotated: AnnotatedString? = null
+
+        decoder.decodeStructure(descriptor) {
+            while (true) {
+                when (val index = decodeElementIndex(descriptor)) {
+                    0 -> type = decodeStringElement(descriptor, 0)
+                    1 -> value = decodeStringElement(descriptor, 1)
+                    2 -> flavor = decodeNullableSerializableElement(descriptor, 2, String.serializer())
+                    3 -> annotated = decodeNullableSerializableElement(descriptor, 1, AnnotatedStringSerializer)
+                    CompositeDecoder.DECODE_DONE -> break
+                    else -> error("Failed to decode '${TextContent::class.simpleName}': unknown index '$index'.")
+                }
+            }
+
+            requireNotNull(type) {
+                "Failed to decode '${TextContent::class.simpleName}': Required '${TextContent.Key.TYPE}' field was null."
+            }
+        }
+
+        return when (type) {
+            TextContent.Type.Plain.value -> PlainText(
+                value = value ?: "Missing required '${TextContent.Key.VALUE}' field."
+            )
+
+            TextContent.Type.Html.value -> HtmlText(
+                value = value ?: "Missing required '${TextContent.Key.VALUE}' field."
+            )
+
+            TextContent.Type.Markdown.value -> MarkdownText(
+                value = value ?: "Missing required '${TextContent.Key.VALUE}' field.",
+                flavor = flavor?.let { MarkdownFlavor(value = it) } ?: MarkdownFlavor.CommonMark
+            )
+
+            TextContent.Type.Annotated.value -> AnnotatedText(
+                annotated = annotated ?: AnnotatedString(
+                    text = value ?: "Missing required '${AnnotatedText.Key.ANNOTATED}' field."
+                )
+            )
+
+            else -> error("Unsupported '${TextContent::class.simpleName}' type '${type}'.")
+        }
+    }
 }
