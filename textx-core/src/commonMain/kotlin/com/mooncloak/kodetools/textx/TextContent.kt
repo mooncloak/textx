@@ -39,6 +39,21 @@ public sealed interface TextContent {
         public const val MARKDOWN: String = "markdown"
         public const val ANNOTATED: String = "annotated"
     }
+
+    public companion object {
+
+        /**
+         * Represents a custom HTTP header for a client to provide in an HTTP request to tell the server which
+         * [TextContent.Type] it supports. This header should be used alongside the "Accept" header. For instance, an
+         * HTTP request would include the following values to request a JSON response whose [TextContent] values are
+         * formatted as a [TextContent.Type.Annotated] text:
+         * ```
+         * Accept: application/json
+         * X-Text-Content-Type: annotated
+         * ```
+         */
+        public const val HEADER: String = "X-Text-Content-Type"
+    }
 }
 
 @JvmInline
