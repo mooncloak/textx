@@ -43,7 +43,7 @@ kotlin {
         binaries.executable()
     }
 
-    macosX64()
+    // TODO: Re-enable: macosX64()
     macosArm64()
 
     iosArm64()

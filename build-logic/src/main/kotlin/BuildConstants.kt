@@ -1,6 +1,6 @@
 @file:Suppress("MemberVisibilityCanBePrivate")
 
-object LibraryConstants {
+object BuildConstants {
 
     object Android {
 

@@ -48,12 +48,12 @@ kotlin {
 }
 
 android {
-    compileSdk = LibraryConstants.Android.compileSdkVersion
+    compileSdk = BuildConstants.Android.compileSdkVersion
     namespace = "com.mooncloak.kodetools.textx.core"
 
     defaultConfig {
-        minSdk = LibraryConstants.Android.minSdkVersion
-        targetSdk = LibraryConstants.Android.targetSdkVersion
+        minSdk = BuildConstants.Android.minSdkVersion
+        targetSdk = BuildConstants.Android.targetSdkVersion
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
